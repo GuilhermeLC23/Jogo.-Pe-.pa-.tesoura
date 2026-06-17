@@ -1,0 +1,162 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /*OCUPAR A TELA TODA*/
+    height: 100vh;
+    width: 100vw;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    background-image: url("./assets/kakegurui.png");
+    background-size: cover;
+    /*OCUPAR A TELA TODA */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(223, 8, 8, 0.8);
+    /*rgba(0, 0, 0, 0.1*/
+    padding: 2rem 5rem;
+    border-radius: 15px;
+    margin-left: 35%;
+
+    .results div {
+        display: flex;
+        gap: 7rem;
+        justify-content: center;
+
+        img {
+            width: 100px;
+        }
+    }
+}
+
+.user-result img {
+    transform: rotate(90deg);
+
+}
+
+.computer-result img {
+    transform: rotate(-90deg) rotateY(180deg);
+}
+
+.result-text {
+    text-align: center;
+    color: #7d2ae8;
+    font-weight: bold;
+    margin: 1.5rem 0;
+    font-size: 2rem;
+}
+
+
+.container.start .user-result {
+    transform-origin: left;
+    animation: userMoves 0.7s ease infinite;
+}
+
+@keyframes userMoves {
+    50% {
+        transform: rotate(10deg);
+    }
+}
+
+.container.start .computer-result {
+    transform-origin: right;
+    animation: computerMoves 0.7s ease infinite;
+}
+
+@keyframes computerMoves {
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+
+.options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /*DA UM ESPAÇAMENTO*/
+    margin-top: 50px;
+
+    p {
+        color: #7d2ae8;
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+.option-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+
+    img {
+        width: 50px;
+    }
+}
+
+
+.option-image:hover {
+    opacity: 0.8;
+}
+
+.option-image:active {
+    opacity: 4;
+}
+
+#glc{
+    display: flex;
+    margin-bottom: -31rem;
+    margin-left: -18rem;
+    font-size: 38px;
+    color: #000000;
+    text-decoration: none;
+    background: linear-gradient(69deg, rgba(162, 0, 194, 1) 18%, rgba(228, 60, 78, 1) 32%, rgba(247, 189, 80, 1) 69%);
+    border-radius: 15px;
+    width: 84px;
+    height: 43px;
+    padding-left: 3px;
+}
+
+#glc:hover{
+    color: red;
+    font-size: 39px;
+    width: 85px;
+    height: 44px;
+}
+
+@media (max-width: 733px) {
+
+
+    body {
+        display: flex;
+        background-image: url("./assets/kakegurui-responsiv.jpg");
+    }
+
+    .container {
+        width: 362px;
+        margin-left: 10px;
+        height: 27rem;
+    }
+
+    .options {
+        gap: 47px;
+        margin-left: -26px;
+    }
+
+#glc{
+    margin-left: -218px;
+}
+}
+
